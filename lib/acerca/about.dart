@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practica_dos/acerca/bloc/acerca_bloc.dart';
+import 'package:practica_dos/utils/constants.dart';
 
 class About extends StatefulWidget {
   const About({Key key}) : super(key: key);
@@ -26,44 +27,74 @@ class _AboutState extends State<About> {
           acerBloc = AcercaBloc();
           return acerBloc;
         },
-        child:
-            BlocListener<AcercaBloc, AcercaState>(listener: (context, state) {
-        }, child: BlocBuilder<AcercaBloc, AcercaState>(
-          builder: (context, state) {
-            return Scaffold(
-              appBar: AppBar(
-                title: Text("Contacto"),
-              ),
-              body: Container(
-                child: Center(
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: 20),
-                      Text("Practica 2",
-                          style: TextStyle(
-                              fontSize: 75)),
-                      SizedBox(height: 100),
-                      Text("Acerca del desarrollador: ",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.black)),
-                      Text(
-                          "  En este proyectyo se ve lo de bloc y firebase contacte al desarrollador para sugerencias",
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black)),
-                      SizedBox(height: 100),
-                      Text("Contactar",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.black)),
-                      SizedBox(height: 10),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.all(30.0),
-                            child: Row(
+        child: BlocListener<AcercaBloc, AcercaState>(
+            listener: (context, state) {},
+            child: BlocBuilder<AcercaBloc, AcercaState>(
+              builder: (context, state) {
+                return Scaffold(
+                  backgroundColor: PRIMARY_COLOR,
+                  appBar: AppBar(
+                    backgroundColor: Color(0xFF9AB3BE),
+                    title: Text(SETTINGS_TITLE),
+                    actions: <Widget>[],
+                  ),
+                  body: Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Stack(
+                      children: <Widget>[
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Row(
+                              children: <Widget>[
+                                Container(
+                                  height: 70,
+                                  child: CircleAvatar(
+                                    backgroundImage: NetworkImage(
+                                      PROFILE_PICTURE,
+                                    ),
+                                    minRadius: 40,
+                                    maxRadius: 40,
+                                  ),
+                                ),
+                                Text(PROFILE_NAME),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 16,
+                            ),
+                            Text(PROFILE_EMAIL),
+                            SizedBox(
+                              height: 16,
+                            ),
+                            ListTile(
+                              title: Text("privacidad"),
+                              leading: Icon(Icons.vpn_key),
+                              onTap: () {},
+                            ),
+                            ListTile(
+                              title: Text("Chats"),
+                              leading: Icon(Icons.chat),
+                              onTap: () {},
+                            ),
+                            ListTile(
+                              title: Text("Notificaciones"),
+                              leading: Icon(Icons.notifications),
+                              onTap: () {},
+                            ),
+                            ListTile(
+                              title: Text("Datos y almacenamiento"),
+                              leading: Icon(Icons.data_usage),
+                              onTap: () {},
+                            ),
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text("Si desea informar sobre algun problema o dar una sugerencia envienos su comentario"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
                               children: <Widget>[
                                 Expanded(
                                   child: MaterialButton(
@@ -79,7 +110,7 @@ class _AboutState extends State<About> {
                                         ),
                                         Expanded(
                                           child: Text(
-                                            "Contacto",
+                                            "Contactar",
                                             textAlign: TextAlign.center,
                                             style:
                                                 TextStyle(color: Colors.white),
@@ -94,15 +125,27 @@ class _AboutState extends State<About> {
                                 ),
                               ],
                             ),
+                          ],
+                        ),
+                        /*Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: <Widget>[
+                              Expanded(
+                                child: RaisedButton(
+                                  child: Text(PROFILE_LOGOUT),
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    ],
+                        ),*/
+                      ],
+                    ),
                   ),
-                ),
-              ),
-            );
-          },
-        )));
+                );
+              },
+            )));
   }
 }

@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:practica_dos/models/todo_remainder.dart';
-import 'package:practica_dos/recordatorios/reminder_body.dart';
+import 'package:practica_dos/recordatorios/bloc/reminder_bloc.dart';
+import 'package:practica_dos/utils/constants.dart';
 
-import 'bloc/reminder_bloc.dart';
-
-class ReminderPage extends StatefulWidget {
-  ReminderPage({Key key}) : super(key: key);
+class Home extends StatefulWidget {
+  Home({Key key}) : super(key: key);
 
   @override
-  _ReminderPageState createState() => _ReminderPageState();
+  _HomeState createState() => _HomeState();
 }
 
-class _ReminderPageState extends State<ReminderPage> {
+class _HomeState extends State<Home> {
   ReminderBloc _reminderBloc;
   var _scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController _todoTextController = TextEditingController();
   TimeOfDay _horario;
-
   @override
   void dispose() {
     // cerrar bloc
@@ -28,9 +26,11 @@ class _ReminderPageState extends State<ReminderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: PRIMARY_COLOR,
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text('Fi'),
+        backgroundColor: Color(0xFF9AB3BE),
+        title: Text('FileApp'),
       ),
       body: BlocProvider(
         create: (context) {
@@ -42,15 +42,44 @@ class _ReminderPageState extends State<ReminderPage> {
             if (state is HomeInitialState) {
               _reminderBloc.add(OnLoadRemindersEvent());
             }
-            return HomeBody(
+            return Column(
+              children: <Widget>[
+                ListTile(
+                  title: Text("Name user"),
+                  subtitle: Text("enviando imagen..."),
+                  leading: Icon(Icons.face),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: Text("Name user"),
+                  subtitle: Text("enviando archivo..."),
+                  leading: Icon(Icons.face),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: Text("Name user"),
+                  subtitle: Text("archivo.mp4"),
+                  leading: Icon(Icons.face),
+                  onTap: () {},
+                ),
+                ListTile(
+                  title: Text("Name user"),
+                  subtitle: Text("data"),
+                  leading: Icon(Icons.face),
+                  onTap: () {},
+                ),
+              ],
+            );
+            /*HomeBody(
               homeState: state,
               homeBloc: _reminderBloc,
-            );
+            );*/
           },
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () async {
+        onPressed:
+            () {} /*async {
           await showModalBottomSheet(
             context: context,
             builder: (context) => StatefulBuilder(
@@ -71,7 +100,8 @@ class _ReminderPageState extends State<ReminderPage> {
                 _reminderBloc.add(OnAddElementEvent(todoReminder: result));
             },
           );
-        },
+        },*/
+        ,
         label: Text("Agregar"),
         icon: Icon(Icons.add_circle),
       ),

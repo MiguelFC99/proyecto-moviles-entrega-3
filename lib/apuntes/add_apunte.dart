@@ -41,7 +41,9 @@ class _AddApunteState extends State<AddApunte> {
           }*/
 
     return Scaffold(
-      appBar: AppBar(title: Text("Agregar apunte")),
+      appBar: AppBar(
+          backgroundColor: Color(0xFFC6D8E1),
+          title: Text("Seleccionar imagen")),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: SingleChildScrollView(
@@ -73,7 +75,7 @@ class _AddApunteState extends State<AddApunte> {
                     },
                   ),
                   SizedBox(height: 48),
-                  TextField(
+                  /*TextField(
                     controller: _materiaController,
                     decoration: InputDecoration(
                       hintText: "Nombre de la materia",
@@ -92,7 +94,7 @@ class _AddApunteState extends State<AddApunte> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                  ),
+                  ),*/
                   SizedBox(height: 24),
                   Row(
                     children: <Widget>[

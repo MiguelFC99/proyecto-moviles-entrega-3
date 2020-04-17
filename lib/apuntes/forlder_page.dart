@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:practica_dos/apuntes/add_apunte.dart';
+import 'package:practica_dos/apuntes/bloc/apuntes_bloc.dart';
 import 'package:practica_dos/apuntes/ind_image.dart';
 import 'package:practica_dos/apuntes/item_apuntes.dart';
 import 'package:practica_dos/utils/constants.dart';
 
-import 'bloc/apuntes_bloc.dart';
-
-class Apuntes extends StatefulWidget {
-  Apuntes({Key key}) : super(key: key);
+class FolderPage extends StatefulWidget {
+  FolderPage({Key key}) : super(key: key);
 
   @override
-  _ApuntesState createState() => _ApuntesState();
+  _FolderPageState createState() => _FolderPageState();
 }
 
-class _ApuntesState extends State<Apuntes> {
+class _FolderPageState extends State<FolderPage> {
   ApuntesBloc bloc;
 
   @override
@@ -28,7 +27,6 @@ class _ApuntesState extends State<Apuntes> {
     return Scaffold(
       backgroundColor: PRIMARY_COLOR,
       appBar: AppBar(
-        backgroundColor: Color(0xFF9AB3BE),
         title: Text("My Folder"),
       ),
       floatingActionButton: FloatingActionButton.extended(

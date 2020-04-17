@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:practica_dos/authentication/authentication_bloc/authentication_bloc.dart';
 import 'package:practica_dos/home/home_page.dart';
+import 'package:practica_dos/utils/constants.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -28,12 +29,22 @@ class _LoginPageState extends State<LoginPage> {
         }
       },
       child: Scaffold(
+        backgroundColor: PRIMARY_COLOR,
         body: Form(
           key: _formKey,
           child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.all(24.0),
-              child: _loginBody(),
+              child: Column(
+                children: <Widget>[
+                  Image.asset(
+                    LOGO_APP,
+                    width: 150,
+                  ),
+                  SizedBox(height: 16.0),
+                  _loginBody(),
+                ],
+              ),
             ),
           ),
         ),

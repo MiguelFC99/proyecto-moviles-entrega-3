@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:practica_dos/acerca/about.dart';
 import 'package:practica_dos/apuntes/apuntes.dart';
-import 'package:practica_dos/recordatorios/reminder.dart';
+import 'package:practica_dos/homeApp/home.dart';
+
+import 'package:practica_dos/utils/constants.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -9,7 +11,7 @@ class HomePage extends StatefulWidget {
   }) : super(key: key);
 
   final _pages = [
-    ReminderPage(),
+    Home(),
     Apuntes(),
     About(),
   ];
@@ -23,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: PRIMARY_COLOR,
       body: IndexedStack(
         index: _currentIndex,
         children: widget._pages,
@@ -45,11 +48,11 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.import_contacts),
-            title: Text("Apuntes"),
+            title: Text("My Folder"),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.info),
-            title: Text("Acerca"),
+            icon: Icon(Icons.settings),
+            title: Text("Ajustes"),
           ),
         ],
       ),
