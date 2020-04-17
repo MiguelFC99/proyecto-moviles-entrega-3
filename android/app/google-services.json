@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "42787402557",
+    "firebase_url": "https://practica2examen-ef330.firebaseio.com",
+    "project_id": "practica2examen-ef330",
+    "storage_bucket": "practica2examen-ef330.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42787402557:android:7d9c57b09689cb9b16cb54",
+        "android_client_info": {
+          "package_name": "mx.iteso.practica.dos.practica_dos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42787402557-jf0obbbtottfoircc4cpntmfe3jm9hbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.iteso.practica.dos.practica_dos",
+            "certificate_hash": "458aa2375c8f53c0a4e0470c08bbc639dcc33f19"
+          }
+        },
+        {
+          "client_id": "42787402557-ah2rfodkh8bbdug4lf18tbvjhd2nd4b0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKDVglkYiI-UaT1cnmDKP0YxpVQBdQ3OY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42787402557-ah2rfodkh8bbdug4lf18tbvjhd2nd4b0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
